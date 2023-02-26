@@ -27,6 +27,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  object-fit: cover;
 }
 
 .container {
@@ -115,9 +116,23 @@ ul {
 
 /* Hero */
 .hero {
-  background-color: var(--color-title);
+  background-color: rgba(46, 47, 66, 0.7);
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url('../images/people-office.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  max-width: 1440px;
   text-align: center;
 
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 188px;
   padding-bottom: 188px;
 }
@@ -184,6 +199,33 @@ ul {
   flex-basis: calc((100%-72px) / 4);
 }
 
+.section-item::before {
+  content: '';
+  display: block;
+  height: 112px;
+  background-color: #f4f4fd;
+  border-radius: 4px;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-antenna::before {
+  background-image: url(../images/antenna.svg);
+}
+
+.icon-clock::before {
+  background-image: url(../images/clock.svg);
+}
+
+.icon-diagram::before {
+  background-image: url(../images/diagram.svg);
+}
+
+.icon-astronaut::before {
+  background-image: url(../images/astronaut.svg);
+}
+
 .section-subtitle {
   color: var(--color-title);
   font-size: 20px;
@@ -211,7 +253,7 @@ ul {
 }
 
 .section-bg {
-  background: #f4f4fd;
+  background-color: #f4f4fd;
 }
 
 .work-list {
@@ -244,17 +286,89 @@ ul {
   padding: 32px 0;
 }
 
+/* Socials icons */
+
+.socials-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.socials-item {
+  width: 40px;
+  height: 40px;
+}
+
+.socials-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: var(--color-brand);
+  fill: #ffffff;
+}
+
+.socials-link:hover,
+.socials-link:active {
+  background-color: var(--color-pressed-state);
+}
+
+.socials-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Customers */
+
+.section-customers-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.section-customers-item {
+  width: 168px;
+  height: 88px;
+}
+
+.section-customers-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #8e8f99;
+  fill: #8e8f99;
+  border-radius: 4px;
+}
+
+.section-customers-link:hover,
+.section-customers-link:focus {
+  fill: var(--color-pressed-state);
+  border: 1px solid var(--color-pressed-state);
+}
+
+.section-customers-icon {
+  width: 104px;
+  height: 56px;
+}
+
 /* Footer  */
 .footer {
   background-color: var(--color-title);
+
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-.footer-text {
-  color: #e7e9fc;
-
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-  width: 264px;
+.footer-container {
+  display: flex;
 }
 
 .footer-logo {
@@ -274,6 +388,61 @@ ul {
 
 .footer-logo-text {
   color: var(--color-brand);
+}
+
+.footer-text {
+  color: #e7e9fc;
+
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  width: 264px;
+}
+
+.footer-socials {
+  margin-left: 120px;
+}
+
+.footer-socials-title {
+  margin-bottom: 16px;
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.footer-socials-list {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-socials-item {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-socials-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: #ffffff;
+}
+
+.footer-socials-link:hover,
+.footer-socials-link:active {
+  background-color: #31d0aa;
+}
+
+.footer-socials-icon {
+  width: 24px;
+  height: 24px;
 }
 
 /* Portfolio  */
@@ -336,6 +505,18 @@ ul {
 
 .project-item:nth-child(n + 7) {
   margin-bottom: 0;
+}
+
+.project-link {
+  display: block;
+  text-decoration: none;
+  color: currentColor;
+}
+
+.project-link:hover,
+.project-link:focus {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .project-content {
